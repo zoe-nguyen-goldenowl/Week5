@@ -2,7 +2,7 @@
 <h1>Apps</h1>
 
 <div id="apps">
-  <% @app.each do |app| %>
+  <% @app.each do |app| %><%= render 'f' %>
     <%= render app %>
     <p>
       <%= link_to "Show this app", app %>

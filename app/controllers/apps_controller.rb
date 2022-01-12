@@ -8,7 +8,6 @@ class AppsController < ApplicationController
 
   # GET /apps/1 or /apps/1.json
   def show
-    
   end
 
   # GET /apps/new
