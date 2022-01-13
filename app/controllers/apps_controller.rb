@@ -14,7 +14,9 @@ class AppsController < ApplicationController
   def create
     @app = App.new(post_params)
     if @app.save
-      # redirect_to notice:"succsessful"
+      respond_to do |format|
+        format.html {redirect_to app_url(@app) }
+      end
     else
       render :new
     end 
@@ -26,8 +28,9 @@ class AppsController < ApplicationController
 
   def update
     if @app.update(post_params)
-      # redirect_to  notice:"succsessful"
-    
+      respond_to do |format|
+        format.html {redirect_to app_url(@app) }
+      end
     else
       render :edit
     end
@@ -35,7 +38,7 @@ class AppsController < ApplicationController
 
   def destroy
     @app.destroy
-    #  redirect_to  notice:"destroy ----"
+    
   end
   private
   def set_user
